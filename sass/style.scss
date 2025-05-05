@@ -1,0 +1,235 @@
+@charset "UTF-8";
+
+body {
+    
+    font-family: "Noto Sans JP", sans-serif;
+    font-family: "Poppins", sans-serif;
+    font-family: "Viga", sans-serif;
+  }
+
+
+  $breakpoints: (
+    pc: "screen and (min-width: 980px)",
+    // PC
+    tab: "screen and (max-width: 979px)",
+    // タブレット（スマホ除く）
+    sp: "screen and (max-width: 767px)",
+    // スマホ
+);
+
+@mixin mq($breakpoint: pc) {
+    @media #{map.get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+//container コンテナー　
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+//header　ヘッダー
+
+.header {
+position: relative;
+width: 100%;
+height: 667px;
+  background-image: url(../img/fv02.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 8px;
+
+    img {
+      width: 154px;
+    }
+  }
+
+
+
+}
+
+
+//nav ナビ
+
+.nav{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 100vh;
+  background: #fff;
+  z-index: 999;
+  transform: translateX(100%); // 初期状態で非表示
+  transition: transform 0.3s ease;
+
+  &.is-open {
+    transform: translateX(0);
+  }
+
+  .nav__list {
+    padding: 80px 20px 20px;
+  }
+
+  .nav__item + .nav__item {
+    margin-top: 20px;
+  }
+
+
+}
+
+.nav__link {
+  color: #FAF7F1; 
+  text-align: center;
+  display: block;
+  padding: 16px 0;
+  text-decoration: none;
+
+  // ホバー時に強調したい場合
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.nav__en,
+.nav__jp {
+  color: #222222; // 英語・日本語どちらも白に
+}
+
+// 募集要項ボタン 
+.btn--black {
+  display: flex;
+  align-items: center;
+  width: 248px;
+  height: 42px;
+  background-color: #222222;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// ENTRYボタン 
+.btn--entry {
+  display: flex;
+  width: 248px;
+  height: 42px;
+  line-height: 42px;
+  background-color: #AFA86F;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+
+// メニューボタン（.header__menu-button）
+.header__menu-button {
+  position: fixed;
+  top: 9px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+
+  .line {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 4px 0;
+    transition: all 0.3s;
+  }
+
+  .menu-label {
+    font-size: 10px;
+    margin-top: 2px;
+  }
+
+  // メニュー開いた時のアニメーション（任意）
+  &.is-active .line:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  &.is-active .line:nth-child(2) {
+    opacity: 0;
+  }
+  &.is-active .line:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+}
+
+
+//header__content　　　ヘッダーコンテンツ
+
+.header__content {
+  position: absolute; // 相対位置指定から絶対位置へ
+  top: 70%;           // 親要素（.header）の50%の位置に
+  left: 50%;
+  transform: translate(-50%, -50%); // 中央寄せ補正
+
+  text-align: center;
+  padding: 0 20px;;
+}
+
+.header__catch {
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.header__sub {
+  margin-top: 8px;
+  background-color: #000;
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 12px;
+}
+
+.header__news {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #222222
+}
+
+  .header__news-label {
+    background: #000;
+    color: #fff;
+    font-size: 10px;
+  }
+
+  .header__news-text {
+    font-size: 12px;
+    background-color: #fff;
+    color: #222222;
+
+  }
+

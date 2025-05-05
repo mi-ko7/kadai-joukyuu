@@ -1,0 +1,217 @@
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Viga", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 667px;
+  background-image: url(../img/fv02.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+}
+.header__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2px;
+  margin-top: 8px;
+}
+.header__logo img {
+  width: 154px;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 100vh;
+  background: #fff;
+  z-index: 999;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.nav.is-open {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.nav .nav__list {
+  padding: 80px 20px 20px;
+}
+.nav .nav__item + .nav__item {
+  margin-top: 20px;
+}
+
+.nav__link {
+  color: #FAF7F1;
+  text-align: center;
+  display: block;
+  padding: 16px 0;
+  text-decoration: none;
+}
+.nav__link:hover {
+  opacity: 0.7;
+}
+
+.nav__en,
+.nav__jp {
+  color: #222222;
+}
+
+.btn--black {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 248px;
+  height: 42px;
+  background-color: #222222;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+.btn--black:hover {
+  opacity: 0.8;
+}
+
+.btn--entry {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 248px;
+  height: 42px;
+  line-height: 42px;
+  background-color: #AFA86F;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+.btn--entry:hover {
+  opacity: 0.8;
+}
+
+.header__menu-button {
+  position: fixed;
+  top: 9px;
+  right: 20px;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+.header__menu-button .line {
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  margin: 4px 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.header__menu-button .menu-label {
+  font-size: 10px;
+  margin-top: 2px;
+}
+.header__menu-button.is-active .line:nth-child(1) {
+  -webkit-transform: rotate(45deg) translateY(8px);
+          transform: rotate(45deg) translateY(8px);
+}
+.header__menu-button.is-active .line:nth-child(2) {
+  opacity: 0;
+}
+.header__menu-button.is-active .line:nth-child(3) {
+  -webkit-transform: rotate(-45deg) translateY(-8px);
+          transform: rotate(-45deg) translateY(-8px);
+}
+
+.header__content {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0 20px;
+}
+
+.header__catch {
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.header__sub {
+  margin-top: 8px;
+  background-color: #000;
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 12px;
+}
+
+.header__news {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #222222;
+}
+
+.header__news-label {
+  background: #000;
+  color: #fff;
+  font-size: 10px;
+}
+
+.header__news-text {
+  font-size: 12px;
+  background-color: #fff;
+  color: #222222;
+}/*# sourceMappingURL=style.css.map */
