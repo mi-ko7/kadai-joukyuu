@@ -9,3 +9,5 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.classList.toggle("is-active"); // アニメーション用（任意）
   });
 });
+
+
